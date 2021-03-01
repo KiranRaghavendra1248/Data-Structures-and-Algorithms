@@ -26,7 +26,7 @@ class Solution:
 # Top down approach solution
 class Solution:
     def climbStairs(self, n: int) -> int:
-        temp=[None for _ in range(n+1)]
+        temp=[None for _ in range(n)]
         for i in range(1,len(temp)+1):
             if i==1:
                 temp[i-1]=1
