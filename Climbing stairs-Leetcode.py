@@ -5,23 +5,23 @@ https://leetcode.com/problems/climbing-stairs/
 def helper(n,temp):
     # Base case
     if n==1:
-        temp[n-1]=1
-        return temp[n-1]
+        temp[n]=1
+        return temp[n]
     elif n==2:
-        temp[n-1]=2
-        return temp[n-1]
+        temp[n]=2
+        return temp[n]
     # Memoize
-    if temp[n-1] is not None:
-        return temp[n-1]
+    if temp[n] is not None:
+        return temp[n]
     # Choice diagram
     #Take one step
-    temp[n-1]=helper(n-1,temp)+helper(n-2,temp)
-    return temp[n-1]
+    temp[n]=helper(n-1,temp)+helper(n-2,temp)
+    return temp[n]
 class Solution:
     def climbStairs(self, n: int) -> int:
         temp=[None for _ in range(n+1)]
         helper(n,temp)
-        return temp[n-1]
+        return temp[n]
 
 # Top down approach solution
 class Solution:
