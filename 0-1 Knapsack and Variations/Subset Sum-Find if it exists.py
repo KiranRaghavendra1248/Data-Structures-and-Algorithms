@@ -1,6 +1,7 @@
 # Problem link
+https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
 # Here we have to return true if a subset of given sum exists, else return false
-
+# Top down approach
 class Solution:
     def perfectSum(self, arr, N, S):
         # code here
