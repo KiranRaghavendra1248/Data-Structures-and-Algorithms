@@ -12,6 +12,9 @@ class Solution:
         S=sum(arr)//2
         N=len(arr)
         temp=[[None for _ in range(S+1)] for _ in range(N+1)]
+
+        # Now this is nothing but the function from subset sum problem, here S=sum(arr)//2
+        
         # Base condition initialization
         for i in range(N+1):
             for j in range(S+1):
