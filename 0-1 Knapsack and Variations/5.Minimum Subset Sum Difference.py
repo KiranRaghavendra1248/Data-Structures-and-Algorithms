@@ -16,7 +16,7 @@ class Solution:
 # If j==0, i.e sum left to be filled is 0 i.e knapsack is full, i.e we have taken included all elements till the current i
 # then curr_sum=sum till current i.
 # Diff of this subset and the other is = abs(sum(arr[:i])-(S-sum(arr[:i])))
-# If i==0, i.e num of elements to choose from becomes zero, curr_sum=if j:
+# If i==0, i.e num of elements to choose from becomes zero, curr_sum=j.
 # Diff of 2 subsets is = abs(j-(S-j)), where S=sum(arr)
 
         for i in range(n+1):
