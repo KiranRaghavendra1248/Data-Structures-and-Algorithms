@@ -10,7 +10,7 @@ class Solution:
         n=len(arr)
         S=sum(arr)
         temp=[[None for _ in range(S+1)] for _ in range(n+1)]
-
+# First approach- My solution
 # Here while looping, i signifies, num of elements left to choose from and j signifies, the sum left to be filled
 # Base condition initialization:
 # If j==0, i.e sum left to be filled is 0 i.e knapsack is full, i.e we have taken included all elements till the current i
@@ -34,3 +34,9 @@ class Solution:
                 else: # We have a choice
                     temp[i][j]=min(temp[i-1][j],temp[i-1][j-arr[i-1]])
         return temp[n][S]
+
+# Another approach( Comparitively easier)
+# Run Subset sum for S=sum(arr), initialization n all same like subset sum
+# Traverse thru last row of temp i.e i=N and find all true values
+# For every true value, Sum of subset=j which implies, subset diff= j-(S-j)
+# Among these, find the minimum one
