@@ -40,3 +40,43 @@ class Solution:
 # Traverse thru last row of temp i.e i=N and find all true values
 # For every true value, Sum of subset=j which implies, subset diff= j-(S-j)
 # Among these, find the minimum one
+
+def SubsetSum(arr, N, S):
+    # code here
+    temp = [[None for _ in range(S + 1)] for _ in range(N + 1)]
+
+    # Base condition initialization
+    for i in range(N + 1):
+        for j in range(S + 1):
+            if i == 0:
+                temp[i][j] = False
+            if j == 0:
+                temp[i][j] = True
+
+    # Choice diagram
+    for i in range(1, N + 1):
+        for j in range(1, S + 1):
+            if arr[i - 1] > j:  # We can't include as it is bigger
+                temp[i][j] = temp[i - 1][j]
+            else:
+                # Now we have choice to include or not
+                # We add the two results
+                temp[i][j] = temp[i - 1][j - arr[i - 1]] or temp[i - 1][j]
+    return (temp)
+
+
+class Solution:
+    def minDiffernce(self, arr, n):
+        # code here
+        S = sum(arr)
+        result = None
+        temp = SubsetSum(arr, n, S)
+        for i in range(len(temp[n])):
+            if temp[n][i]:
+                curr_sum = i
+                subset_diff = abs(i - (S - i))
+                if result is None:
+                    result = subset_diff
+                else:
+                    result = min(result, subset_diff)
+        return result
