@@ -14,20 +14,20 @@ class Solution:
     # Refer notes
 
     # Base condition initialization
-    for i in range(N + 1):
-        for j in range(S + 1):
-            if i == 0:
-                temp[i][j] = False
-            if j == 0:
-                temp[i][j] = True
+        for i in range(N + 1):
+            for j in range(S + 1):
+                if i == 0:
+                    temp[i][j] = False
+                if j == 0:
+                    temp[i][j] = True
 
-    # Choice diagram
-    for i in range(1, N + 1):
-        for j in range(1, S + 1):
-            if arr[i - 1] > j:  # We can't include as it is bigger
-                temp[i][j] = temp[i - 1][j]
-            else:
-                # Now we have choice to include or not
-                # We add the two results
-                temp[i][j] = temp[i - 1][j - arr[i - 1]] or temp[i - 1][j]
-    return (temp[N][S])
+        # Choice diagram
+        for i in range(1, N + 1):
+            for j in range(1, S + 1):
+                if arr[i - 1] > j:  # We can't include as it is bigger
+                    temp[i][j] = temp[i - 1][j]
+                else:
+                    # Now we have choice to include or not
+                    # We add the two results
+                    temp[i][j] = temp[i - 1][j - arr[i - 1]] or temp[i - 1][j]
+        return (temp[N][S])

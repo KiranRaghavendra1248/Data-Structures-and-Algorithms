@@ -13,21 +13,21 @@ class Solution:
     # If j==0 i.e sum=0 can be produced by array of any num of elements by selecting an empty subset, so it is initialized to true.
     # Refer notes
 
-    # Base condition initialization
-    for i in range(N + 1):
-        for j in range(S + 1):
-            if i == 0:
-                temp[i][j] = 0
-            if j == 0:
-                temp[i][j] = 1
+        # Base condition initialization
+        for i in range(N + 1):
+            for j in range(S + 1):
+                if i == 0:
+                    temp[i][j] = 0
+                if j == 0:
+                    temp[i][j] = 1
 
-    # Choice diagram
-    for i in range(1, N + 1):
-        for j in range(1, S + 1):
-            if arr[i - 1] > j:  # We can't include as it is bigger
-                temp[i][j] = temp[i - 1][j] % (10 ** 9 + 7)
-            else:
-                # Now we have choice to include or not
-                # We add the two results
-                temp[i][j] = temp[i - 1][j - arr[i - 1]] % (10 ** 9 + 7) + temp[i - 1][j] % (10 ** 9 + 7)
-    return (temp[N][S] % (10 ** 9 + 7))
+        # Choice diagram
+        for i in range(1, N + 1):
+            for j in range(1, S + 1):
+                if arr[i - 1] > j:  # We can't include as it is bigger
+                    temp[i][j] = temp[i - 1][j] % (10 ** 9 + 7)
+                else:
+                    # Now we have choice to include or not
+                    # We add the two results
+                    temp[i][j] = temp[i - 1][j - arr[i - 1]] % (10 ** 9 + 7) + temp[i - 1][j] % (10 ** 9 + 7)
+        return (temp[N][S] % (10 ** 9 + 7))
