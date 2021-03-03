@@ -1,6 +1,8 @@
 # Problem link
 https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
 # Here we have to return true if a subset of given sum exists, else return false
+# Here temp[i][j] is True if sum of j can be made with first i numbers(by dropping some and selecting some)
+# Hence the any true value in last row, signifies, all possible sums i.e js than can be made with n elements(i.e all elements)
 # Top down approach
 class Solution:
     def perfectSum(self, arr, N, S):

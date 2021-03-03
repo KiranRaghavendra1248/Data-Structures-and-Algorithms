@@ -41,6 +41,8 @@ class Solution:
 # For every true value, Sum of subset=j which implies, subset diff= j-(S-j)
 # Among these, find the minimum one
 
+# Here temp[i][j] is True if sum of j can be made with first i numbers(by dropping some and selecting some)
+# Hence the any true value in last row, signifies, all possible sums i.e js than can be made with n elements(i.e all elements)
 def SubsetSum(arr, N, S):
     # code here
     temp = [[None for _ in range(S + 1)] for _ in range(N + 1)]
