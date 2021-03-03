@@ -1,5 +1,7 @@
 # Problem link
+'''
 https://leetcode.com/problems/partition-equal-subset-sum/
+'''
 
 # Here if we need to find 2 subsets of sum S, implies sum of total arr=2*S
 # Hence, sum(arr)=2*S must be even. If it is odd return false.

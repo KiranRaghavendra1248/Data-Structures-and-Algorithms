@@ -1,7 +1,9 @@
 # Problem link
 # GFG editor gives TLE for DP solution also
+'''
 https://practice.geeksforgeeks.org/problems/minimum-sum-partition3317/1
 https://www.interviewbit.com/problems/minimum-difference-subsets/#
+'''
 
 
 class Solution:
@@ -43,6 +45,8 @@ class Solution:
 
 # Here temp[i][j] is True if sum of j can be made with first i numbers(by dropping some and selecting some)
 # Hence the any true value in last row, signifies, all possible sums i.e js than can be made with n elements(i.e all elements)
+# But dont use this temp matrix populated with True or False for counting purpose
+# For eg if temp[n][j]==True, it means, that j sum can be made using first n numbers in arr. But it doesnt tell, how many such subsets can be made.
 def SubsetSum(arr, N, S):
     # code here
     temp = [[None for _ in range(S + 1)] for _ in range(N + 1)]

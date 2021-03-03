@@ -1,6 +1,7 @@
 # Problem link
+'''
 https://www.hackerearth.com/problem/algorithm/subset-sum-8/
-
+'''
 N, S = map(int, input().strip().split())
 arr = list(map(int, input().strip().split()))
 temp = [[None for _ in range(S + 1)] for _ in range(N + 1)]
