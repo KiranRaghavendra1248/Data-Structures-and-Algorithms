@@ -8,6 +8,7 @@ https://leetcode.com/problems/target-sum/
 # But that wont work here, as in Count num of subsets with given sum, we initialize first column to 1
 # This is because, for any value of n, the only S=0 subset that can be formed is the empty subset i.e []
 # But in this question, the values in the arr may contain 0. Hence that initialization will give a wrong answer
+# This approach can be used only if zeros are not present in the array.
 # Hence, this approach cannot be used.
 
 # Here storing is a bit different
