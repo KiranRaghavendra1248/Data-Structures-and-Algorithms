@@ -2,6 +2,7 @@
 # Problem statement:
 # Given an array arr and Difference D, find the num of subset pairs, whose difference=D
 
+# Note all problems here, are done with assumption that array has no 0s.
 
 # The below fun returns num of subsets with sum=S i.e given sum
 def CountSubsetswithSum(arr, N, S):
