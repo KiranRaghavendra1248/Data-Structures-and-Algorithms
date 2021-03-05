@@ -25,7 +25,7 @@ class Solution:
             for j in range(S+1):
                 if j==0:
                     # If remaining sum=0, then for given i, all elements have been included
-                    temp[i][j]=abs(sum(arr[:i])-(S-sum(arr[:i])))
+                    temp[i][j]=abs(sum(arr[:n-i])-(S-sum(arr[:n-i])))
                 if i==0:
                     # If num elements=0, min diff=0 obviously
                     temp[i][j]=abs(j-(S-j))
