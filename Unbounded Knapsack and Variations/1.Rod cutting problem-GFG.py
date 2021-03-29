@@ -45,7 +45,7 @@ def cuttingrod(price,N):
             if length[i-1]>j: # Bigger hence, can't be included i.e cut can't be made
                 temp[i][j]=temp[i-1][j]
             else: # We have option to make the cut or not
-                temp[i][j]=max(price[i-1]+temp[i][j-price[i-1]],temp[i-1][j])
+                temp[i][j]=max(price[i-1]+temp[i][j-length[i-1]],temp[i-1][j])
     return temp[N][S]
 
 
