@@ -2,7 +2,33 @@
 '''
 https://leetcode.com/problems/palindromic-substrings/
 '''
+# 1. Method 1
+# Here the shape of temp is N*N, where the vertical side represents, start index of the string and
+# the horizontal side represents the y axis of the string.
+# The outer loop marks the end of the substring and loops from 0 till N
+# The inner loop marks the start of the substring and loops from 0 till END+1
+# Only the upper half of the DP table is filled by this looping mechanism
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        N = len(s)
+        temp = [[None for _ in range(N)] for _ in range(N)]
+        ans = 0
+        for end in range(N):
+            for start in range(end + 1):
+                if start == end:
+                    temp[start][end] = 1
+                    ans += 1
+                elif start + 1 == end:
+                    temp[start][end] = s[start] == s[end]
+                    ans += temp[start][end]
+                else:
+                    temp[start][end] = s[start] == s[end] and temp[start + 1][end - 1]
+                    ans += temp[start][end]
+        for i in temp:
+            print(i)
+        return ans
 
+# Method 2: Diagonal table filling, not getting accepted
 # Here the shape of temp is N*N, where the vertical side represents, start index of the string and
 # the horizontal side represents the y axis of the string.
 # The table is filled in a diagonal manner
@@ -33,3 +59,4 @@ class Solution:
                 temp[i][j] = s[i] == s[j] and temp[i + 1][j - 1]
                 ans += temp[i][j]
         return ans
+
