@@ -35,6 +35,10 @@ def SubsetsWithDiffD(arr,D,n):
     # The range of subset sum=(0,sum(arr))
     S=sum(arr)
     S1 = (S + D) / 2
+    # Here if S1 is not an integer, then no subsets pair with given difference can exist.
+    if S1!=int(S1): # Make sure subset sum S1 is an integer
+        return 0
+    S1 = (S + D) // 2 # As S1 must be an integer and not floating point
     return CountSubsetswithSum(arr, n, S1)
 
 # Note
